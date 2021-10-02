@@ -1,5 +1,5 @@
   function connect(){
-  
+    
     return require('amqplib').connect({
         host: 'localhost',
         port:5672,

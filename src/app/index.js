@@ -4,6 +4,7 @@ require('./infra/database/index')
 const cors = require('cors');
 const { errors } = require('celebrate')
 
+//instancio a classe messageBroker e chamo a funcao connect()
 require('./services/rabbitMQ/messageBroker').connect()
 require('./services/rabbitMQ/consumer')
 

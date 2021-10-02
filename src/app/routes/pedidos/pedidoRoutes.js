@@ -8,15 +8,7 @@ const PedidoController = require('../../controllers/PedidoController')
 const routes = express.Router();
 //routes.use(authMiddleware);
 
-routes.get('/orders', PedidoController.findAll);
-
-routes.post('/orders', PedidoController.create);
-
-routes.patch('/orders/:_id', PedidoController.update);
-
-routes.get('/orders/:_id', PedidoController.findById);
-
-//routes.delete('/orders/:_id',celebrate({[Segments.PARAMS]: validation.get_delete }), UserController.delete);
+routes.get('/orders/:cnpj', PedidoController.findAllByCnpj);
 
 
 module.exports = routes;

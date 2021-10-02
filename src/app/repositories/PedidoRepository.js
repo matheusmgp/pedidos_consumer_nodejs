@@ -3,19 +3,17 @@ const Pedido = require('../models/pedido');
 
 module.exports = {
 
-    async findAll(){
-        return await Pedido.find();       
+    async findAllByCnpj(cnpj){
+        return await Pedido.findOne({cnpj});       
+    },    
+    async findOne(value){       
+        return await Pedido.findOne(value);       
     },
-
-    async findById(_id){       
-       return await Pedido.findOne({ _id });       
-    },
-
     async create(payload){      
         return await Pedido.create(payload);     
     },
 
-    async update(_id, payload){
+    async update(_id, payload){      
         return  await Pedido.findByIdAndUpdate({ _id }, payload, { new : true });        
     },
 
